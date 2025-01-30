@@ -18,25 +18,29 @@ const container = (delay) => ({
 const Contact = () => {
   return (
     <div className="border-b border-neutral-900 pb-4 lg:mb-36 px-4 sm:px-6">
-      <div className="flex flex-wrap">
+      <motion.h1 
+        whileInView={{opacity:1, y:0}}
+        initial={{opacity:0, y:-100}}
+        transition={{duration:0.5}}
+        className="pb-8 lg:pb-16 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-thin tracking-tight text-center lg:mt-16"
+      >
+        Get in Touch
+      </motion.h1>
+      <div className="flex flex-wrap lg:flex-nowrap">
         {/* Left Column - Contact Options */}
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center">
-            <motion.h1
-              variants={container(0)}
-              initial="hidden"
-              animate="visible"
-              className="pb-8 lg:pb-16 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-thin tracking-tight text-center lg:mt-16"
-            >
-              Get in Touch
-            </motion.h1>
-
+        <motion.div 
+          whileInView={{opacity:1, x:0}}
+          initial={{opacity:0, x:-100}}
+          transition={{duration:1}}
+          className="w-full lg:w-1/2"
+        >
+          <div className="flex flex-col items-center lg:items-start">
             {/* Email Card */}
             <motion.div
               variants={container(0.5)}
               initial="hidden"
               animate="visible"
-              className="rounded-lg p-4 sm:p-6 shadow-md transition-shadow hover:shadow-lg mb-6 w-full max-w-md mx-auto"
+              className="rounded-lg p-4 sm:p-6 shadow-md transition-shadow hover:shadow-lg mb-6 w-full max-w-md lg:max-w-none lg:mb-8"
             >
               <div className="mb-3 flex justify-center">
                 <Mail className="h-6 w-6 text-gray-600" />
@@ -55,7 +59,7 @@ const Contact = () => {
               variants={container(0.75)}
               initial="hidden"
               animate="visible"
-              className="rounded-lg p-4 sm:p-6 shadow-md transition-shadow hover:shadow-lg mb-6 w-full max-w-md mx-auto"
+              className="rounded-lg p-4 sm:p-6 shadow-md transition-shadow hover:shadow-lg mb-6 w-full max-w-md lg:max-w-none"
             >
               <div className="mb-3 flex justify-center">
                 <svg className="h-6 w-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
@@ -71,23 +75,25 @@ const Contact = () => {
               </div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column - Contact Form */}
-        <div className="w-full lg:w-1/2 lg:pt-16">
-          <motion.div
-            variants={container(1)}
-            initial="hidden"
-            animate="visible"
-            className="lg:p-8 max-w-md mx-auto"
-          >
+        <motion.div
+
+
+          whileInView={{opacity:1, x:0}}
+          initial={{opacity:0, x:100}}
+          transition={{duration:1}}
+          className="w-full lg:w-1/2 "
+        >
+          <div className=" max-w-md mx-auto">
             <form onSubmit={(e) => e.preventDefault()} className="space-y-4 sm:space-y-6">
               <div>
                 <label className="mb-1 sm:mb-2 block text-sm sm:text-base text-gray-600">Name</label>
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full rounded-lg border border-gray-300 p-2 sm:p-3 text-sm sm:text-base focus:border-gray-500 focus:outline-none"
+                  className="w-full rounded-lg border border-gray-300 text-gray-600 p-2 sm:p-3 text-sm sm:text-base focus:border-gray-600 focus:outline-none"
                 />
               </div>
 
@@ -96,7 +102,7 @@ const Contact = () => {
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full rounded-lg border border-gray-300 p-2 sm:p-3 text-sm sm:text-base focus:border-gray-500 focus:outline-none"
+                  className="w-full text-gray-600 rounded-lg border border-gray-300 p-2 sm:p-3 text-sm sm:text-base focus:border-gray-500 focus:outline-none"
                 />
               </div>
 
@@ -105,7 +111,7 @@ const Contact = () => {
                 <textarea
                   placeholder="Describe your project"
                   rows={4}
-                  className="w-full rounded-lg border border-gray-300 p-2 sm:p-3 text-sm sm:text-base focus:border-gray-500 focus:outline-none"
+                  className="w-full text-gray-600 rounded-lg border border-gray-300 p-2 sm:p-3 text-sm sm:text-base focus:border-gray-500 focus:outline-none"
                 />
               </div>
 
@@ -117,8 +123,8 @@ const Contact = () => {
                 <Send className="ml-2 h-4 w-4" />
               </button>
             </form>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
