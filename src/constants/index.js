@@ -9,14 +9,14 @@ export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer w
 
 export const EXPERIENCES = [
   {
-    year: "2023 - Present",
+    year: "2025 - Present",
     role: "Full Stack Developer",
     company: "Swivt",
     description: `Currently member where I'm working with team member in developing and maintaining TMS system using Tailwind Css, JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. `,
     technologies: ["Javascript", "React.js", "Tailwind CSS", "MongoDB"],
   },
   {
-    year: "2022 - 2023",
+    year: "2024 - 2025",
     role: "Frontend Developer",
     company: "Pronexa",
     description: `Designed and developed user interfaces for website consultancy using Tailwind CSS and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
