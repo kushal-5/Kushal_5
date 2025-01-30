@@ -5,7 +5,7 @@ import project4 from "../assets/projects/project-4.jpg";
 
 export const HERO_CONTENT = `I am an enthusiastic junior full stack developer with a passion for creating dynamic, user-centric web applications. With hands-on experience spanning front-end technologies like React and Next.js, and back-end expertise in Node.js, MySQL, and MongoDB, I bring a versatile skill set to the table. My journey in web development has been fueled by a curiosity for innovation and a dedication to delivering exceptional user experiences. I thrive on transforming ideas into reality, driving business growth through cutting-edge solutions, and continually evolving in the ever-changing tech landscape.`;
 
-export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
+export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 1 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
 
 export const EXPERIENCES = [
   {
@@ -38,7 +38,7 @@ export const PROJECTS = [
     image: project2,
     description:
       "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+    technologies: ["HTML", "CSS", "React.js", "Javascript"],
   },
   {
     title: "Portfolio Website",
@@ -48,11 +48,11 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "React", "Bootstrap"],
   },
   {
-    title: "Blogging Platform",
+    title: "TMS Platform", 
     image: project4,
     description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+      "A comprehensive platform for users to buy and sell shares, enhanced with advanced features such as real-time market data, personalized investment insights, portfolio management tools, and secure transaction capabilities.",
+    technologies: ["Node", "Tailwind CSS", "MongoDB", "Express", "React.js"],
   },
 ];
 
