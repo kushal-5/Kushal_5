@@ -30,7 +30,7 @@ const About = () => {
           className="w-full lg:w-1/2 flex justify-center items-center"
         >
           <div className="text-center lg:text-left">
-            <p className="my-2 max-w-xl py-6">{ABOUT_TEXT}</p>
+            <p className="my-2 max-w-xl leading-loose py-6">{ABOUT_TEXT}</p>
           </div>
         </motion.div>
       </div>
