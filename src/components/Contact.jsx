@@ -13,7 +13,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("sending"); // Changed to lowercase
+    setStatus("sending");
     setShowModal(true);
 
     try {
@@ -25,18 +25,18 @@ const Contact = () => {
 
       const result = await response.json();
       if (result.success) {
-        setStatus("success"); // Changed to lowercase
+        setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setStatus("error"); // Changed to lowercase
+        setStatus("error");
       }
     } catch (error) {
-      setStatus("error"); // Changed to lowercase
+      setStatus("error");
     }
 
     setTimeout(() => {
       setShowModal(false);
-      setStatus(""); // Reset status
+      setStatus("");
     }, 3000);
   };
 
@@ -58,12 +58,12 @@ const Contact = () => {
         </div>
 
         {/* Contact Info Cards */}
-        <div className="grid md:grid-cols-3 gap-10 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 mb-16">
           {[
             {
               icon: <Mail className="h-8 w-8 text-indigo-600" />,
               title: "Email Directly",
-              info: "shresthakushal850@gmail.com",
+              info: "kussshal5@gmail.com",
               gradient: "from-indigo-500 to-indigo-300",
               hoverBorder: "indigo-600",
             },
@@ -84,17 +84,37 @@ const Contact = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className={`group bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl border border-gray-700 hover:border-${item.hoverBorder} transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-${item.hoverBorder}/10 transform hover:-translate-y-1`}
+              className={`
+                group 
+                bg-gradient-to-br from-gray-900 to-gray-800 
+                p-6 sm:p-8 
+                rounded-xl border border-gray-700 
+                hover:border-${item.hoverBorder} 
+                transition-all duration-300 
+                shadow-lg hover:shadow-xl 
+                hover:shadow-${item.hoverBorder}/10 
+                transform hover:-translate-y-1
+                w-full sm:w-[260px]
+                h-auto sm:h-[200px]
+              `}
             >
               <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-200 group-hover:text-white transition-colors mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-200 group-hover:text-white transition-colors mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-400 group-hover:text-gray-300 transition-colors">{item.info}</p>
+              <p className="text-gray-400 group-hover:text-gray-300 transition-colors break-words whitespace-normal">
+  {item.info}
+</p>
+
               <div
-                className={`mt-4 h-0.5 w-0 group-hover:w-full bg-gradient-to-r ${item.gradient} transition-all duration-500 rounded-full`}
+                className={`
+                  mt-4 h-0.5 w-0 group-hover:w-full 
+                  bg-gradient-to-r ${item.gradient} 
+                  transition-all duration-500 
+                  rounded-full
+                `}
               ></div>
             </div>
           ))}
@@ -109,7 +129,9 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="block text-gray-300 font-medium">Full Name</label>
+                <label className="block text-gray-300 font-medium">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -121,7 +143,9 @@ const Contact = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="block text-gray-300 font-medium">Email Address</label>
+                <label className="block text-gray-300 font-medium">
+                  Email Address
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -135,7 +159,9 @@ const Contact = () => {
             </div>
 
             <div className="space-y-2">
-              <label className="block text-gray-300 font-medium">Project Details</label>
+              <label className="block text-gray-300 font-medium">
+                Project Details
+              </label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -167,7 +193,7 @@ const Contact = () => {
             exit={{ opacity: 0, scale: 0.8 }}
             className="bg-gray-900 text-white p-8 rounded-2xl shadow-2xl text-center max-w-md mx-auto border border-gray-700"
           >
-            {status === "sending" ? ( // Ensure lowercase
+            {status === "sending" ? (
               <div className="flex flex-col items-center space-y-4">
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -177,7 +203,7 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold text-cyan-400">Sending Message</h3>
                 <p className="text-gray-400">Securely transmitting your details...</p>
               </div>
-            ) : status === "success" ? ( // Ensure lowercase
+            ) : status === "success" ? (
               <div className="flex flex-col items-center space-y-4">
                 <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
                   <svg
@@ -195,7 +221,9 @@ const Contact = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-green-400">Success!</h3>
-                <p className="text-gray-300">Message received. I'll respond within 24 hours.</p>
+                <p className="text-gray-300">
+                  Message received. I'll respond within 24 hours.
+                </p>
               </div>
             ) : (
               <div className="flex flex-col items-center space-y-4">
@@ -227,7 +255,7 @@ const Contact = () => {
       {/* Footer Section */}
       <footer className="mt-20 py-8 text-center text-gray-400">
         <p>© 2025 Kushal Shrestha. All rights reserved.</p>
-        <p> 📍Kathmandu, Nepal    </p>
+        <p>📍Kathmandu, Nepal</p>
       </footer>
     </div>
   );
